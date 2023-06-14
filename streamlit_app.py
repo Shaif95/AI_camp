@@ -6,4 +6,4 @@ st.title("Streamlit on Replit")
 
 df = pd.read_csv("ufo.csv")
 
-df.head(1)
+st.write(df.head(1))
