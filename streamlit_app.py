@@ -89,12 +89,16 @@ st.subheader(
 sns.set_theme()
 df22 = df2[(df2['Shape'].isin(["Circle", "Light", "Triangle", "Orb"]))
            & (df2['Duration'] < 30) & (df2['Duration'] > 10)]
-#Creaes the Box Plot. (Still need to sort so only top five shapes show up and limit duration seconds)
-st.pyplot(sns.histplot(df22, x='Shape', hue='Duration'))
-#Labels the sides of the graph
+#Creaes the Box Plot.
+
+st.title('Histogram: UFO Sighting Duration Compared to Shape')
+sns.histplot(df22, x='Shape', hue='Duration')
 plt.xlabel('Shape')
 plt.ylabel('Frequency')
-plt.title('Box Plot: UFO Sighting Duration Compared to Shape')
+plt.title('Histogram: UFO Sighting Duration Compared to Shape')
+st.pyplot()
+
+
 st.write(
   "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting"
 )
