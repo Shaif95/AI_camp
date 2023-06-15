@@ -196,7 +196,7 @@ st.write(
 
 st.header("What can we tell about the time of UFO sightings?")
 
-time_plot = df["Time"].value_counts().head(200)
+time_plot = df["Time"].value_counts().head(20)
 
 line_plot = time_plot.plot.line()
 
