@@ -7,8 +7,6 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-
-
 st.title("Protocol Parrots")
 
 st.write(
@@ -105,7 +103,7 @@ st.pyplot()
 #Sets the title of the graph
 plt.title("Histogram: Duration of UFO Sightings")
 st.write(
-  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that "
+  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that most people reporting data only had a few seconds to base their judgements on. This could potentially impaact our data and also means that many of these supposed sightings could be natural events that were mistaken for UFOs due to the limited timeframe the data providers had."
 )
 
 st.header("Hypothesis #4:")
@@ -126,7 +124,7 @@ plt.title('Histogram: UFO Sighting Duration Compared to Shape')
 st.pyplot()
 
 st.write(
-  "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting. This could potentially be explained due to  most of the lengths being very close to each other with the graph only having a range of 15 seconds. This means that many people still don't have enough time to make a precise judgement about what shape they think the UFO was, leading to similar results in the graph's time interval."
+  "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting. This could potentially be explained due to  most of the lengths being very close to each other with the graph only having a range of 15 seconds. This means that many people still don't have enough time to make a precise judgement about what shape they think the UFO was, leading to similar results about what shape the UFO is thought to look like in the graph's time interval."
 )
 
 st.header("Hypothesis #5:")
@@ -145,7 +143,7 @@ st.plotly_chart(
          names=top_10_states.index,
          title="Shapes of UFO's"))
 st.write(
-  "These graphs show the most common shapes of UFO's are light, circle, and triangle."
+  "These graphs show the most common shapes of UFO's are light, circle, and triangle. These three shapes take up over 40% of the observed UFO's"
 )
 
 st.header("Hypothesis #6:")
@@ -210,12 +208,9 @@ st.pyplot(plt.show())
 
 st.header("Where do we have the most images of UFOs")
 
-
-
 df2 = df[df["Images"] == "Yes"].head(800)
 
 top_5_states = df2['Country'].value_counts().head(5)
-
 
 st.plotly_chart(
   px.pie(top_5_states,
