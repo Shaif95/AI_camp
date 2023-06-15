@@ -2,4 +2,4 @@ pandas
 wget
 streamlit
 matplotlib
-plotly
+plotly==5.12.0
