@@ -38,7 +38,7 @@ st.write(df.head(5))
 st.header("Data Cleaning: Removing NaNs, Unknowns : ")
 
 df = df[df['Shape'] != 'Unknown']
-df.fillna("No", inplace=True)
+df["Images"] = df["Images"].apply(lambda x: "No" if x != "Yes" else x)
 
 st.write(df.head(5))
 
