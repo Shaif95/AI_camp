@@ -103,7 +103,7 @@ st.pyplot()
 #Sets the title of the graph
 plt.title("Histogram: Duration of UFO Sightings")
 st.write(
-  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds"
+  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that "
 )
 
 st.header("Hypothesis #4:")
@@ -154,7 +154,6 @@ df = df[df['Shape'] != 'Unknown']
 
 top_10_states = USA['Shape'].value_counts().head(20)
 
-st.title("Bar Chart: Shapes of UFO's in the USA")
 st.plotly_chart(
   px.bar(top_10_states,
          x=top_10_states.index,
@@ -166,7 +165,6 @@ df = df[df['Shape'] != 'Unknown']
 
 top_10_states = UK['Shape'].value_counts().head(20)
 
-st.title("Bar Chart: Shapes of UFO's in the USA")
 st.plotly_chart(
   px.bar(top_10_states,
          x=top_10_states.index,
