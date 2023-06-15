@@ -121,7 +121,7 @@ plt.title('Histogram: UFO Sighting Duration Compared to Shape')
 st.pyplot()
 
 st.write(
-  "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting"
+  "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting."
 )
 
 st.header("Hypothesis #5:")
@@ -228,4 +228,4 @@ top_5_states = df['Country'].value_counts().head(5)
 fig = px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 5 Countries with UFO Images')
 
 
-st.plotly_chart("px.pie(top_5_states, values=top_5_states.values"),names=top_5_states.index, title=("Top 5 Countries with UFO Sightin")
+st.plotly_chart(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title="Top 5 Countries with UFO Sightings"))
