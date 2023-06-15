@@ -109,7 +109,9 @@ st.subheader("What are the most common shapes of UFO's?")
 top_10_states = df['Shape'].value_counts().head(5)
 
 st.title("Area Chart: Shapes of UFO's")
-st.plotly_chart(px.area(top_10_states, values='top_10_states', names=top_10_states.index, title="Shapes of UFO's"))
+
+
+st.plotly_chart(px.area(top_10_states, x=top_10_states.index, y='top_10_states', title="Shapes of UFO's"))
 
 top_10_states = df['Shape'].value_counts().head(20)
 st.plotly_chart(
