@@ -132,10 +132,10 @@ st.header("Hypothesis #5:")
 st.subheader("What are the most common shapes of UFO's?")
 
 top_10_states = df['Shape'].value_counts().head(5)
+
 st.title("Fill Between Chart: Top 10 States")
-fig, ax = plt.subplots()
-ax.fill_between(top_10_states.index, top_10_states.values)
-st.pyplot(fig)
+st.area_chart(top_10_states)
+
 
 top_10_states = df['Shape'].value_counts().head(20)
 st.plotly_chart(
