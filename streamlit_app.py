@@ -196,7 +196,7 @@ st.write(
 
 st.header("What can we tell about the time of UFO sightings?")
 
-time_plot = df4["Time"].value_counts().head(200)
+time_plot = df["Time"].value_counts().head(200)
 
 time_plot.plot.line()
 plt.title("Countries with the most UFO images")
