@@ -58,10 +58,8 @@ st.write(
 
 top_5_states = df['City'].value_counts().head(5)
 
-st.plotly_chart_cart(px.pie(top_5_states,
-                                values=top_5_states.values,
-                                names=top_5_states.index,
-                                title='Top 5 US Cities with UFO Sightings'))
+st.plotly_chart(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 5 US Cities with UFO Sightings'))
+
 
 
 st.write(
