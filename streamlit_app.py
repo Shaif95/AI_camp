@@ -7,7 +7,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 warnings.filterwarnings("ignore", category=UserWarning, module="streamlit")
-warnings.filterwarnings("ignore", category=UserWarning, module="altair")
+
 
 
 st.title("Protocol Parrots")
