@@ -57,13 +57,13 @@ st.plotly_chart(
          title='Top 3 Countries with UFO Sightings'))
 
 st.write(
-  "The above data shows that the US has far more UFO sightings than either the UK or Canada combined"
+  "The above data shows that the US has far more UFO sightings than either the UK or Canada combined. This would make sense as the US has more military bases and history of UFO's than any other country in the world"
 )
 
 st.header("Sightings of UFO's by US States and Cities")
 
 st.subheader(
-  "Now we'll look at how US sightings of UFO's are spread out amoung states and cities"
+  "Now we'll look at how US sightings of UFO's are spread out among states and cities"
 )
 
 top_5_states = df['State'].value_counts().head(5)
@@ -75,7 +75,7 @@ st.plotly_chart(
          title='Top 5 US States with UFO Sightings'))
 
 st.write(
-  "The Data of UFO Reports by State shows that California has the most sightings with Florida in Second and Texas in Third"
+  "The Data of UFO Reports by State shows that California has the most sightings with Florida in Second and Texas in Third. It seems from the above data that most sightings of UFO's per State revolve around States with a high amount of governmental activity"
 )
 
 top_5_states = df['City'].value_counts().head(5)
@@ -87,7 +87,7 @@ st.plotly_chart(
          title='Top 5 US Cities with UFO Sightings'))
 
 st.write(
-  "The Data of UFO Reports by City shows that Tucson has the most sightings with 13 Reports while Portland and Seattle have 11 and 10 Reports respectively"
+  "The Data of UFO Reports by City shows that Tucson has the most sightings with 13 Reports while Portland and Seattle have 11 and 10 Reports respectively. Tucson is located in Arizona, which puts it geographically close to Area 51 and Rosswell, New Mexico where the orgins of Alien activity and theory's have come from"
 )
 
 st.header("Hypothesis #3:")
@@ -100,7 +100,7 @@ st.pyplot()
 #Sets the title of the graph
 plt.title("Histogram: Duration of UFO Sightings")
 st.write(
-  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds"
+  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that most sightings are very brief which could affect the reliability of the information people provide on these supposed sightings as it can be hard to take in all the details of a situation in less than 10 seconds. This also means that many of these sightings could be explained by other more realistic events such as somebody mistaking ordinary  objects for a UFO, as the data providers have a very limited time to make a conclusion about what they witnessed."
 )
 
 st.header("Hypothesis #4:")
@@ -128,7 +128,6 @@ st.header("Hypothesis #5:")
 st.subheader("What are the most common shapes of UFO's?")
 
 top_10_states = df['Shape'].value_counts().head(5)
-st.title("Fill Between Chart: Top 10 States")
 fig, ax = plt.subplots()
 ax.fill_between(top_10_states.index, top_10_states.values)
 st.pyplot(fig)
@@ -151,7 +150,6 @@ df = df[df['Shape'] != 'Unknown']
 
 top_10_states = USA['Shape'].value_counts().head(20)
 
-st.title("Bar Chart: Shapes of UFO's in the USA")
 st.plotly_chart(
   px.bar(top_10_states,
          x=top_10_states.index,
@@ -163,7 +161,6 @@ df = df[df['Shape'] != 'Unknown']
 
 top_10_states = UK['Shape'].value_counts().head(20)
 
-st.title("Bar Chart: Shapes of UFO's in the USA")
 st.plotly_chart(
   px.bar(top_10_states,
          x=top_10_states.index,
@@ -193,5 +190,35 @@ st.write(
   "These graphs show that in different countries both light and circle are towards the top of the most common but the order of the other shapes is very different. Therefore to an extent where you live matters for the shapes of UFO's you will see."
 )
 
+st.header("What can we tell about the time of UFO sightings?")
+import pandas as pd
+import matplotlib.pyplot as plt
 
+country_counts = df['Country'].value_counts().head(5)
+plt.pie(country_counts, labels=country_counts.index, autopct='%1.1f%%')
+plt.title('Countries with Most UFO Images')
+plt.axis('equal')
+plt.show()
+
+
+
+st.header("Where do we have the most images of UFOs")
+import pandas as pd
+import matplotlib.pyplot as plt
+top_10_states = df["Time"].value_counts().head(500)
+top_10_states.plot.line()
+plt.title("Countries with the most UFO images")
+
+                                                            
+df2 = df[df["Images"] == "Yes"].head(800)
+df2.head(500)
+import plotly.express as px
+
+# Assuming you have the 'top_10_states' Series
+top_5_states = df['Country'].value_counts().head(5)
+
+# Create a pie chart using Plotly
+fig = px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 5 Countries with UFO Images')
+fig.show()
+     
 
