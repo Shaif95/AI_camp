@@ -205,9 +205,9 @@ plt.show()
 
 st.header("Where do we have the most images of UFOs")
 
-top_10_states = df["Time"].value_counts().head(100)
+time_plot = df["Time"].value_counts().head(100)
 
-top_10_states.plot.line()
+time_plot.plot.line()
 plt.title("Countries with the most UFO images")
 plt.xlabel("States")
 plt.ylabel("Number of UFO Sightings")
