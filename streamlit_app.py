@@ -103,7 +103,7 @@ plt.hist(df2["Duration"], range=[0, 100])
 st.pyplot()
 
 st.write(
-  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that "
+  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that many of our data providers only had a few seconds to make a judgement about what they saw, which could affect our data. This also means that many of these sightings could be explained by natural events as many of our data providers only had a few short seconds to make a conclusion from their observations. "
 )
 
 st.header("Hypothesis #4:")
