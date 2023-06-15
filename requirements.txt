@@ -2,3 +2,4 @@ pandas
 wget
 streamlit
 matplotlib
+plotly
