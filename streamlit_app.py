@@ -11,7 +11,7 @@ st.write("My name is Derek, I am an Eight grader and I am learning to code so th
 st.write("My name is Carson, I am a junior and have recently learned how to code in Python")
 st.write("My name is Leighton, I'm a Sophmore and I'm learning Python from AI-camp so that I can learn how to code for Digital Art and Animation")
 
-st.write("My name is Toriaun, I am a freshma n")
+st.write("My name is Toriaun, I am a freshman")
 
 st.title("UFO Sightings")
 st.header("Introduction")
