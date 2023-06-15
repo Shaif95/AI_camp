@@ -195,7 +195,7 @@ st.write(
 
 st.header("What can we tell about the time of UFO sightings?")
 
-top_10_states = df["Time"].value_counts().head(500)
+top_10_states = df["Time"].value_counts().head(200)
 
 st.title("Times of UFO visits")
 st.line_chart(top_10_states)
