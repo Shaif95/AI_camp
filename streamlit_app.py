@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import warnings
 
 warnings.filterwarnings("ignore")
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.title("Protocol Parrots")
 
