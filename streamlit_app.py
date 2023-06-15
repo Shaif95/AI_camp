@@ -196,15 +196,10 @@ st.write(
 
 st.header("What can we tell about the time of UFO sightings?")
 
-time_plot = df["Time"].value_counts().head(20)
+top_10_states = df["Time"].value_counts().head(500)
 
-line_plot = time_plot.plot.line()
-
-# Set the title
-line_plot.set_title("Times of UFO visits")
-
-# Display the line plot using Streamlit
-st.pyplot(line_plot.figure)
+st.title("Times of UFO visits")
+st.line_chart(top_10_states)
 
 st.header("Where do we have the most images of UFOs")
 
