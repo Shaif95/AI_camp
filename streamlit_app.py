@@ -101,8 +101,6 @@ st.title('Histogram of Duration')
 plt.hist(df2["Duration"], range=[0, 100])
 st.pyplot()
 
-#Sets the title of the graph
-plt.title("Histogram: Duration of UFO Sightings")
 st.write(
   "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that "
 )
@@ -111,17 +109,11 @@ st.header("Hypothesis #4:")
 st.subheader(
   "Does the observed shape of the UFO have any relation to how long the sightings lasts?"
 )
-# Apply the default theme
-sns.set_theme()
-df22 = df2[(df2['Shape'].isin(["Circle", "Light", "Triangle", "Orb"]))
-           & (df2['Duration'] < 30) & (df2['Duration'] > 10)]
-#Creaes the Box Plot.
 
-st.title('Histogram: UFO Sighting Duration Compared to Shape')
-sns.histplot(df22, x='Shape', hue='Duration')
-plt.xlabel('Shape')
-plt.ylabel('Frequency')
-plt.title('Histogram: UFO Sighting Duration Compared to Shape')
+plt.hist(df2['Duration'], range=[0, 100])
+plt.title('Histogram: Duration of UFO Sightings')
+
+# Render the plot in Streamlit
 st.pyplot()
 
 st.write(
