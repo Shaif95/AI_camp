@@ -196,7 +196,7 @@ st.write(
 
 st.header("What can we tell about the time of UFO sightings?")
 
-time_plot = df4["Time"].value_counts().head(200)
+time_plot = df["Time"].value_counts().head(200)
 
 line_plot = time_plot.plot.line()
 
@@ -210,9 +210,9 @@ st.header("Where do we have the most images of UFOs")
 
 
 
-df2 = df[df["Images"] == "Yes"].head(800)
+dff = df[df["Images"] == "Yes"].head(200)
 
-top_5 = df2['Country'].value_counts().head(5)
+top_5 = dff['Country'].value_counts().head(5)
 
 
 st.plotly_chart(
