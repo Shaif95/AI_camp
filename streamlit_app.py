@@ -103,7 +103,7 @@ st.pyplot()
 #Sets the title of the graph
 plt.title("Histogram: Duration of UFO Sightings")
 st.write(
-  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that most people had a very limited amount of time to make a judgement about what they witnessed which could affect our results."
+  "Looking at this histogram we can tell that the majority of reported UFO sightings last between 0 and 10 seconds. This means that "
 )
 
 st.header("Hypothesis #4:")
@@ -131,6 +131,7 @@ st.header("Hypothesis #5:")
 st.subheader("What are the most common shapes of UFO's?")
 
 top_10_states = df['Shape'].value_counts().head(5)
+st.title("Fill Between Chart: Top 10 States")
 fig, ax = plt.subplots()
 ax.fill_between(top_10_states.index, top_10_states.values)
 st.pyplot(fig)
@@ -195,7 +196,6 @@ st.write(
 
 st.header("What can we tell about the time of UFO sightings?")
 
-
 time_plot = df4["Time"].value_counts().head(20)
 
 time_plot.plot.line()
@@ -211,10 +211,8 @@ st.header("Where do we have the most images of UFOs")
 
 
 df2 = df[df["Images"] == "Yes"].head(800)
-df2.head(500)
 
-# Assuming you have the 'top_10_states' Series
-top_5_states = df2['Country'].value_counts().head(3)
+top_5_states = df2['Country'].value_counts().head(5)
 
 
 st.plotly_chart(
