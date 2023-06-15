@@ -26,8 +26,8 @@ st.bar_chart(top_5_states)
 
 top_5_states = df['Country'].value_counts().head(3)
 
-st.pie_chart(fig = px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 3 Countries with UFO Sightings'))
-st.pie_chartfig.show()
+st.pyplot(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 3 Countries with UFO Sightings').update_traces(textposition='inside', textinfo='percent+label'))
+
 
 st.write("The above data shows that the US has far more UFO sightings than all other countries combined")
 
