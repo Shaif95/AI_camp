@@ -115,12 +115,12 @@ plt.hist(df2['Duration'], range=[0, 100])
 plt.title('Histogram: Duration of UFO Sightings')
 
 # Save the plot to a BytesIO buffer
-buffer = BytesIO()
+buffer = io.BytesIO()
 plt.savefig(buffer, format='png')
 buffer.seek(0)
 
 # Display the plot as an image in Streamlit
-st.write(buffer.getvalue(), use_column_width=True)
+st.image(buffer, use_column_width=True)
 
 st.write(
   "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting. This could potentially be explained due to  most of the lengths being very close to each other with the graph only having a range of 15 seconds. This means that many people still don't have enough time to make a precise judgement about what shape they think the UFO was, leading to similar results in the graph's time interval."
