@@ -17,7 +17,7 @@ st.write(
 )
 
 st.write(
-  "My name is Toriaun, I am a freshman and i just learned how to code python")
+  "My name is Toriaun, I am a freshman and I just learned how to code python")
 
 st.title("UFO Sightings")
 st.header("Introduction")
@@ -167,7 +167,7 @@ st.title("Bar Chart: Shapes of UFO's in the USA")
 st.plotly_chart(
   px.bar(top_10_states,
          x=top_10_states.index,
-         y='top_10_states',
+         y=top_10_states,
          title="Shapes of UFO's in the USA"))
 
 CAN = df[df["Country"] == "Canada"].head(20)
@@ -176,8 +176,8 @@ df = df[df['Shape'] != 'Unknown']
 top_10_states = CAN['Shape'].value_counts().head(20)
 st.plotly_chart(
   px.bar(top_10_states,
-         values='top_10_states',
-         names='top_10_states.index',
+         x=top_10_states.index,
+         y=top_10_states,
          title="Shape's of UFO's in Canada"))
 
 AUS = df[df["Country"] == "Australia"].head(20)
@@ -185,10 +185,13 @@ AUS = df[df["Country"] == "Australia"].head(20)
 top_10_states = AUS['Shape'].value_counts().head(20)
 st.plotly_chart(
   px.bar(top_10_states,
-         values='top_10_states',
-         names='top_10_states.index',
+         x=top_10_states.index,
+         y=top_10_states,
          title="Shape's of UFO's in Australia"))
 
 st.write(
   "These graphs show that in different countries both light and circle are towards the top of the most common but the order of the other shapes is very different. Therefore to an extent where you live matters for the shapes of UFO's you will see."
 )
+
+
+
