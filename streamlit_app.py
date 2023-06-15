@@ -4,6 +4,8 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+warnings.filterwarnings("ignore")
+
 st.title("Protocol Parrots")
 
 st.write(
@@ -205,7 +207,7 @@ plt.show()
 
 st.header("Where do we have the most images of UFOs")
 
-time_plot = df["Time"].value_counts().head(100)
+time_plot = df4["Time"].value_counts().head(20)
 
 time_plot.plot.line()
 plt.title("Countries with the most UFO images")
