@@ -28,8 +28,11 @@ st.bar_chart(top_5_states)
 
 top_5_states = df['Country'].value_counts().head(3)
 
-st.plotly_chart(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 3 Countries with UFO Sightings'))
-
+st.plotly_chart(
+  px.pie(top_5_states,
+         values=top_5_states.values,
+         names=top_5_states.index,
+         title='Top 3 Countries with UFO Sightings'))
 
 st.write(
   "The above data shows that the US has far more UFO sightings than either the UK or Canada combined"
@@ -43,9 +46,11 @@ st.subheader(
 
 top_5_states = df['State'].value_counts().head(5)
 
-st.plotly_chart(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 5 US States with UFO Sightings'))
-
-
+st.plotly_chart(
+  px.pie(top_5_states,
+         values=top_5_states.values,
+         names=top_5_states.index,
+         title='Top 5 US States with UFO Sightings'))
 
 st.write(
   "The Data of UFO Reports by State shows that California has the most sightings with Florida in Second and Texas in Third"
@@ -53,11 +58,11 @@ st.write(
 
 top_5_states = df['City'].value_counts().head(5)
 
-st.plotly_chart_cart(fig=px.pie(top_5_states,
-                       values=top_5_states.values,
-                       names=top_5_states.index,
-                       title='Top 5 US Cities with UFO Sightings'))
-st.pie_chartfig.show()
+st.plotly_chart_cart(px.pie(top_5_states,
+                                values=top_5_states.values,
+                                names=top_5_states.index,
+                                title='Top 5 US Cities with UFO Sightings'))
+
 
 st.write(
   "The Data of UFO Reports by City shows that Tucson has the most sightings with 13 Reports while Portland and Seattle have 11 and 10 Reports respectively"
@@ -151,5 +156,5 @@ st.plotly_chart(
          title="Shape's of UFO's in Australia"))
 
 st.write(
-  "These graphs show that in different countries both light and circle are towards the top of the most common but the order of the other shapes is very differen. "
+  "These graphs show that in different countries both light and circle are towards the top of the most common but the order of the other shapes is very different. Therefore to an extent where you live matters for the shapes of UFO's you will see."
 )
