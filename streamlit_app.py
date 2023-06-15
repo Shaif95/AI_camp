@@ -43,10 +43,8 @@ st.subheader(
 
 top_5_states = df['State'].value_counts().head(5)
 
-st.plotly_chart(fig=px.pie(top_5_states,
-                        values=top_5_states.values,
-                        names=top_5_states.index,
-                        title='Top 5 US States with UFO Sightings'))
+st.plotly_chart(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 5 US States with UFO Sightings'))
+
 
 
 st.write(
