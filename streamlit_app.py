@@ -68,7 +68,10 @@ st.write(
 
 st.header("Hypothesis #3:")
 st.subheader("What can we tell about the duration of UFO Sightings")
-st.pyplot(plt.hist(df2["Duration"], range=[0, 100]))
+
+st.title('Histogram of Duration')
+plt.hist(df2["Duration"], range=[0, 100])
+st.pyplot()
 
 #Sets the title of the graph
 plt.title("Histogram: Duration of UFO Sightings")
