@@ -30,8 +30,9 @@ top_5_states = df['Country'].value_counts().head(3)
 
 st.plotly_chart(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 3 Countries with UFO Sightings'))
 
+
 st.write(
-  "The above data shows that the US has far more UFO sightings than all other countries combined"
+  "The above data shows that the US has far more UFO sightings than either the UK or Canada combined"
 )
 
 st.header("Sightings of UFO's by US States and Cities")
@@ -42,11 +43,11 @@ st.subheader(
 
 top_5_states = df['State'].value_counts().head(5)
 
-st.pie_chart(fig=px.pie(top_5_states,
+st.plotly_chart(fig=px.pie(top_5_states,
                         values=top_5_states.values,
                         names=top_5_states.index,
                         title='Top 5 US States with UFO Sightings'))
-st.pie_chartfig.show()
+
 
 st.write(
   "The Data of UFO Reports by State shows that California has the most sightings with Florida in Second and Texas in Third"
@@ -54,7 +55,7 @@ st.write(
 
 top_5_states = df['City'].value_counts().head(5)
 
-st.pie_cart(fig=px.pie(top_5_states,
+st.plotly_chart_cart(fig=px.pie(top_5_states,
                        values=top_5_states.values,
                        names=top_5_states.index,
                        title='Top 5 US Cities with UFO Sightings'))
@@ -120,7 +121,7 @@ st.plotly_chart(
   px.bar(top_10_states,
          values='top_10_states',
          names='top_10_states.index',
-         title="Most Common Shapes in the USA"))
+         title="Shape's of UFO's in the USA"))
 
 UK = df[df["Country"] == "United Kingdom"].head(20)
 df = df[df['Shape'] != 'Unknown']
@@ -130,7 +131,7 @@ st.plotly_chart(
   px.bar(top_10_states,
          values='top_10_states',
          names='top_10_states.index',
-         title="Most Common Shapes in the UK"))
+         title="Shape's of UFO's in the UK"))
 
 CAN = df[df["Country"] == "Canada"].head(20)
 df = df[df['Shape'] != 'Unknown']
@@ -140,14 +141,17 @@ st.plotly_chart(
   px.bar(top_10_states,
          values='top_10_states',
          names='top_10_states.index',
-         title="Most Common Shapes in Canada"))
+         title="Shape's of UFO's in Canada"))
 
 AUS = df[df["Country"] == "Australia"].head(20)
 
 top_10_states = AUS['Shape'].value_counts().head(20)
-top_10_states.plot.bar()
-plt.title("Shapes of UFO's in Australia")
+st.plotly_chart(
+  px.bar(top_10_states,
+         values='top_10_states',
+         names='top_10_states.index',
+         title="Shape's of UFO's in Australia"))
 
 st.write(
-  "These graphs show that in different countries the mosat common shape contin"
+  "These graphs show that in different countries both light and circle are towards the top of the most common but the order of the other shapes is very differen. "
 )
