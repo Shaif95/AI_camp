@@ -4,6 +4,15 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
+st.title("Protocol Parrots")
+
+st.write("My name is Derek, I am an Eight grader and I am learning to code so that I can code robots.")
+st.write("My name is Carson, I am a junior and have recently learned how to code in Python")
+st.write("My name is Leighton, I'm a Sophmore and I'm learning code from AI-camp so that I can get a headstart on Digital Art and Animation")
+
+st.write("My name is Toriaun, I am a freshma n")
+
 st.title("UFO Sightings")
 st.header("Introduction")
 st.write(
@@ -97,7 +106,6 @@ plt.xlabel('Shape')
 plt.ylabel('Frequency')
 plt.title('Histogram: UFO Sighting Duration Compared to Shape')
 st.pyplot()
-
 
 st.write(
   "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting"
