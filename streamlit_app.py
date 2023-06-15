@@ -16,7 +16,7 @@ st.write(
   "My name is Leighton, I'm a Sophmore and I'm learning Python from AI-camp so that I can learn how to code for Digital Art and Animation"
 )
 
-st.write("My name is Toriaun, I am a freshman")
+st.write("My name is Toriaun, I am a freshman and i just learned how to code python")
 
 st.title("UFO Sightings")
 st.header("Introduction")
@@ -127,15 +127,17 @@ st.header("Hypothesis #5:")
 st.subheader("What are the most common shapes of UFO's?")
 
 top_10_states = df['Shape'].value_counts().head(5)
-
-st.title("Area Chart: Shapes of UFO's")
-st.plotly_chart(px.area(top_10_states, x=top_10_states.index, y='top_10_states', title="Shapes of UFO's"))
+st.plotly_chart(
+  px.area(top_10_states,
+          values='top_10_states',
+          names='top_10_states.index',
+          title="Shapes of UFO's"))
 
 top_10_states = df['Shape'].value_counts().head(20)
 st.plotly_chart(
   px.pie(top_10_states,
-         values='top_10_states',
-         names='top_10_states.index',
+         values=top_10_states,
+         names=top_10_states.index,
          title="Shapes of UFO's"))
 st.write(
   "These graphs show the most common shapes of UFO's are light, circle, and triangle."
