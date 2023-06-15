@@ -7,6 +7,9 @@ import warnings
 
 warnings.filterwarnings("ignore")
 warnings.filterwarnings("ignore", category=UserWarning, module="streamlit")
+import matplotlib
+matplotlib.use("Agg")
+
 
 
 st.title("Protocol Parrots")
