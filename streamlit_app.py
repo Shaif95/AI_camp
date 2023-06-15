@@ -58,9 +58,11 @@ st.write(
 
 top_5_states = df['City'].value_counts().head(5)
 
-st.plotly_chart(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 5 US Cities with UFO Sightings'))
-
-
+st.plotly_chart(
+  px.pie(top_5_states,
+         values=top_5_states.values,
+         names=top_5_states.index,
+         title='Top 5 US Cities with UFO Sightings'))
 
 st.write(
   "The Data of UFO Reports by City shows that Tucson has the most sightings with 13 Reports while Portland and Seattle have 11 and 10 Reports respectively"
@@ -113,6 +115,9 @@ st.plotly_chart(
          values='top_10_states',
          names='top_10_states.index',
          title="Shapes of UFO's"))
+st.write(
+  "These graphs show the most common shapes of UFO's are light, circle, and triangle."
+)
 
 st.header("Hypothesis #6:")
 st.subheader("Does the country have anything to do with the shape of the UFO?")
