@@ -39,7 +39,7 @@ df.fillna("No", inplace=True)
 
 st.write(df.head(5))
 
-st.header("Sightings of UFO's by Country")
+st.header("Sightings of UFO's by Country: Leighton")
 
 st.subheader(
   "Below is a Bar graph and Pie chart representing how many sightings are reported on UFO's by Countries around the world"
@@ -213,8 +213,13 @@ st.header("Where do we have the most images of UFOs")
 import pandas as pd
 import matplotlib.pyplot as plt
 top_10_states = df["Time"].value_counts().head(500)
-top_10_states.plot.line()
+st.pyplot(top_10_states.plot.line())
 plt.title("Countries with the most UFO images")
+plt.xlabel("States")
+plt.ylabel("Number of UFO Sightings")
+
+# Show the plot in Streamlit
+st.pyplot(plt)
 
                                                             
 df2 = df[df["Images"] == "Yes"].head(800)
