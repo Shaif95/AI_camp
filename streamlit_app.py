@@ -113,8 +113,13 @@ st.subheader(
 plt.hist(df2['Duration'], range=[0, 100])
 plt.title('Histogram: Duration of UFO Sightings')
 
-# Render the plot in Streamlit
-st.pyplot()
+# Save the plot to a BytesIO buffer
+buffer = BytesIO()
+plt.savefig(buffer, format='png')
+buffer.seek(0)
+
+# Display the plot as an image in Streamlit
+st.write(buffer.getvalue(), use_column_width=True)
 
 st.write(
   "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting. This could potentially be explained due to  most of the lengths being very close to each other with the graph only having a range of 15 seconds. This means that many people still don't have enough time to make a precise judgement about what shape they think the UFO was, leading to similar results in the graph's time interval."
@@ -189,7 +194,7 @@ st.write(
 
 st.header("What can we tell about the time of UFO sightings?")
 
-top_10_states = df["Time"].value_counts().head(500)
+top_10_states = df["Time"].value_counts().head(200)
 
 st.title("Times of UFO visits")
 st.line_chart(top_10_states)
