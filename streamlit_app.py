@@ -198,13 +198,13 @@ st.header("What can we tell about the time of UFO sightings?")
 
 time_plot = df["Time"].value_counts().head(200)
 
-time_plot.plot.line()
-plt.title("Countries with the most UFO images")
-plt.xlabel("States")
-plt.ylabel("Number of UFO Sightings")
+line_plot = top_10_states.plot.line()
 
-# Display the plot using pyplot.show()
-st.pyplot(plt.show())
+# Set the title
+line_plot.set_title("Times of UFO visits")
+
+# Display the line plot using Streamlit
+st.pyplot(line_plot.figure)
 
 st.header("Where do we have the most images of UFOs")
 
@@ -212,11 +212,11 @@ st.header("Where do we have the most images of UFOs")
 
 df2 = df[df["Images"] == "Yes"].head(800)
 
-top_5_states = df2['Country'].value_counts().head(5)
+top_5 = df2['Country'].value_counts().head(5)
 
 
 st.plotly_chart(
-  px.pie(top_5_states,
-         values=top_5_states.values,
-         names=top_5_states.index,
+  px.pie(top_5,
+         values=top_5.values,
+         names=top_5.index,
          title="Top 5 Countries with UFO Sightings"))
