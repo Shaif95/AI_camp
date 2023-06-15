@@ -151,16 +151,24 @@ df = df[df['Shape'] != 'Unknown']
 
 top_10_states = USA['Shape'].value_counts().head(20)
 
-
 st.title("Bar Chart: Shapes of UFO's in the USA")
-st.plotly_chart(px.bar(top_10_states, x=top_10_states.index, y=top_10_states.values, title="Shapes of UFO's in the USA"))
+st.plotly_chart(
+  px.bar(top_10_states,
+         x=top_10_states.index,
+         y=top_10_states.values,
+         title="Shapes of UFO's in the USA"))
 
 UK = df[df["Country"] == "United Kingdom"].head(20)
 df = df[df['Shape'] != 'Unknown']
 
 top_10_states = UK['Shape'].value_counts().head(20)
+
 st.title("Bar Chart: Shapes of UFO's in the USA")
-st.plotly_chart(px.bar(top_10_states, x=top_10_states.index, y=top_10_states.values, title="Shapes of UFO's in the USA"))
+st.plotly_chart(
+  px.bar(top_10_states,
+         x=top_10_states.index,
+         y='top_10_states',
+         title="Shapes of UFO's in the USA"))
 
 CAN = df[df["Country"] == "Canada"].head(20)
 df = df[df['Shape'] != 'Unknown']
