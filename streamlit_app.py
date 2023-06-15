@@ -121,7 +121,7 @@ plt.title('Histogram: UFO Sighting Duration Compared to Shape')
 st.pyplot()
 
 st.write(
-  "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting. This could potentially be explained due to  most of the lengths being very close to each other with the graph only having a range of 15 seconds. This means that many people still don't have enough time to make a precise judgement about what shape they think the UFO "
+  "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting. This could potentially be explained due to  most of the lengths being very close to each other with the graph only having a range of 15 seconds. This means that many people still don't have enough time to make a precise judgement about what shape they think the UFO was, leading to similar results in the graph's time interval."
 )
 
 st.header("Hypothesis #5:")
@@ -193,10 +193,6 @@ st.write(
   "These graphs show that in different countries both light and circle are towards the top of the most common but the order of the other shapes is very different. Therefore to an extent where you live matters for the shapes of UFO's you will see."
 )
 
-
-
-
-
 st.header("What can we tell about the time of UFO sightings?")
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -207,12 +203,9 @@ plt.title('Countries with Most UFO Images')
 plt.axis('equal')
 plt.show()
 
-
-
 st.header("Where do we have the most images of UFOs")
 
-
-top_10_states = df["Time"].value_counts().head(500)
+top_10_states = df["Time"].value_counts().head(100)
 
 top_10_states.plot.line()
 plt.title("Countries with the most UFO images")
@@ -221,7 +214,7 @@ plt.ylabel("Number of UFO Sightings")
 
 # Display the plot using pyplot.show()
 st.pyplot(plt.show())
-                                                            
+
 df2 = df[df["Images"] == "Yes"].head(800)
 df2.head(500)
 import plotly.express as px
@@ -230,7 +223,13 @@ import plotly.express as px
 top_5_states = df['Country'].value_counts().head(5)
 
 # Create a pie chart using Plotly
-fig = px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 5 Countries with UFO Images')
+fig = px.pie(top_5_states,
+             values=top_5_states.values,
+             names=top_5_states.index,
+             title='Top 5 Countries with UFO Images')
 
-
-st.plotly_chart(px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title="Top 5 Countries with UFO Sightings"))
+st.plotly_chart(
+  px.pie(top_5_states,
+         values=top_5_states.values,
+         names=top_5_states.index,
+         title="Top 5 Countries with UFO Sightings"))
