@@ -228,4 +228,4 @@ top_5_states = df['Country'].value_counts().head(5)
 fig = px.pie(top_5_states, values=top_5_states.values, names=top_5_states.index, title='Top 5 Countries with UFO Images')
 
 
-st.plotly_chart("px.pie(top_5_states, values=top_5_states.values")names=top_5_states.index, title=("Top 5 Countries with UFO Sightin")
+st.plotly_chart("px.pie(top_5_states, values=top_5_states.values"),names=top_5_states.index, title=("Top 5 Countries with UFO Sightin")
