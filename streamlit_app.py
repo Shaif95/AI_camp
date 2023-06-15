@@ -89,16 +89,12 @@ st.subheader(
 sns.set_theme()
 df22 = df2[(df2['Shape'].isin(["Circle", "Light", "Triangle", "Orb"]))
            & (df2['Duration'] < 30) & (df2['Duration'] > 10)]
-#Creaes the Box Plot.
-
-st.title('Histogram: UFO Sighting Duration Compared to Shape')
-sns.histplot(df22, x='Shape', hue='Duration')
+#Creaes the Box Plot. (Still need to sort so only top five shapes show up and limit duration seconds)
+st.pyplot(sns.histplot(df22, x='Shape', hue='Duration'))
+#Labels the sides of the graph
 plt.xlabel('Shape')
 plt.ylabel('Frequency')
-plt.title('Histogram: UFO Sighting Duration Compared to Shape')
-st.pyplot()
-
-
+plt.title('Box Plot: UFO Sighting Duration Compared to Shape')
 st.write(
   "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting"
 )
@@ -107,11 +103,11 @@ st.header("Hypothesis #5:")
 st.subheader("What are the most common shapes of UFO's?")
 
 top_10_states = df['Shape'].value_counts().head(5)
-
-st.title("Area Chart: Shapes of UFO's")
-
-
-st.plotly_chart(px.area(top_10_states, x=top_10_states.index, y='top_10_states', title="Shapes of UFO's"))
+st.plotly_chart(
+  px.area(top_10_states,
+          values='top_10_states',
+          names='top_10_states.index',
+          title="Shapes of UFO's"))
 
 top_10_states = df['Shape'].value_counts().head(20)
 st.plotly_chart(
