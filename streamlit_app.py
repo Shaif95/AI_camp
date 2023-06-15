@@ -9,7 +9,7 @@ st.title("Protocol Parrots")
 
 st.write("My name is Derek, I am an Eight grader and I am learning to code so that I can code robots.")
 st.write("My name is Carson, I am a junior and have recently learned how to code in Python")
-st.write("My name is Leighton, I'm a Sophmore and I'm learning code from AI-camp so that I can get a headstart on Digital Art and Animation")
+st.write("My name is Leighton, I'm a Sophmore and I'm learning Python from AI-camp so that I can learn how to code for Digital Art and Animation")
 
 st.write("My name is Toriaun, I am a freshma n")
 
@@ -24,7 +24,15 @@ df2 = df
 df3 = df
 df4 = df
 
-st.write(df.head(10))
+st.write(df.head(5))
+
+st.header("Data Cleaning: Removing NaNs, Unknowns : ")
+
+df = df[df['Shape'] != 'Unknown']
+df = df[df['Images'] != 'Yes']
+
+st.write(df.head(5))
+
 
 st.header("Sightings of UFO's by Country")
 
