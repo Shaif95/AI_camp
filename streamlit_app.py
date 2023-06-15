@@ -60,7 +60,7 @@ st.write(
   "The above data shows that the US has far more UFO sightings than either the UK or Canada combined"
 )
 
-st.header("Sightings of UFO's by US States and Cities")
+st.header("Sightings of UFO's by US States and Cities: Leighton")
 
 st.subheader(
   "Now we'll look at how US sightings of UFO's are spread out amoung states and cities"
@@ -121,7 +121,7 @@ plt.title('Histogram: UFO Sighting Duration Compared to Shape')
 st.pyplot()
 
 st.write(
-  "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting."
+  "Looking at this box plot we can see that the observed shape of the UFO is independent of the length of the sighting. This could potentially be explained due to  most of the lengths being very close to each other with the graph only having a range of 15 seconds. This means that many people still don't have enough time to make a precise judgement about what shape they think the UFO "
 )
 
 st.header("Hypothesis #5:")
@@ -210,17 +210,17 @@ plt.show()
 
 
 st.header("Where do we have the most images of UFOs")
-import pandas as pd
-import matplotlib.pyplot as plt
+
+
 top_10_states = df["Time"].value_counts().head(500)
-st.pyplot(top_10_states.plot.line())
+
+top_10_states.plot.line()
 plt.title("Countries with the most UFO images")
 plt.xlabel("States")
 plt.ylabel("Number of UFO Sightings")
 
-# Show the plot in Streamlit
-st.pyplot(plt)
-
+# Display the plot using pyplot.show()
+st.pyplot(plt.show())
                                                             
 df2 = df[df["Images"] == "Yes"].head(800)
 df2.head(500)
