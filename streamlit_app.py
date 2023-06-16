@@ -27,7 +27,7 @@ st.write(
 st.title("UFO Sightings")
 st.header("Introduction")
 st.write(
-  "UFO's always seem to be reported, today you will find out how often it really is. This is a dashboard that shows everything about UFO's and when they are seen."
+  "UFO's always seem to be reported, today you will find out how often it really is. This is a dashboard that shows everything about UFO's and when they are seen. This presentation is based on some recent UFo reportings"
 )
 df = pd.read_csv("ufo.csv")
 df1 = df
