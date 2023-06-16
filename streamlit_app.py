@@ -27,7 +27,7 @@ st.write(
 st.title("UFO Sightings")
 st.header("Introduction")
 st.write(
-  "UFO's always seem to be reported, today you will find out how often it really is. This is a dashboard that shows everything about UFO's and when they are seen. This presentation is based on some recent UFo reportings"
+  "UFO's always seem to be reported, today you will find out how often it really is. This is a dashboard that shows everything about UFO's and when they are seen. This presentation is based on some recent UFO reportings."
 )
 df = pd.read_csv("ufo.csv")
 df1 = df
@@ -65,7 +65,7 @@ st.write(
   "The above data shows that the US has far more UFO sightings than either the UK or Canada combined"
 )
 
-st.header("Sightings of UFO's by US States and Cities: Leighton")
+st.header("Hypothesis2 : The frequency of UFO sightings differs significantly among different states and cities within the United States: Leighton")
 
 st.subheader(
   "Now we'll look at how US sightings of UFO's are spread out amoung states and cities"
@@ -96,7 +96,7 @@ st.write(
 )
 
 st.header("Hypothesis #3:")
-st.subheader("What can we tell about the duration of UFO Sightings")
+st.subheader("What can we tell about the duration of UFO Sightings?")
 
 st.title('Histogram of Duration')
 plt.hist(df2["Duration"], range=[0, 100])
@@ -128,7 +128,7 @@ st.write(
 )
 
 st.header("Hypothesis #5:")
-st.subheader("What are the most common shapes of UFO's?")
+st.subheader("Is there a specific shape of UFO that is more commonly reported in UFO sightings than others?")
 
 top_10_states = df['Shape'].value_counts().head(5)
 
@@ -194,6 +194,7 @@ st.write(
   "These graphs show that in different countries both light and circle are towards the top of the most common but the order of the other shapes is very different. Therefore to an extent where you live matters for the shapes of UFO's you will see."
 )
 
+st.header("Hypothesis #7:")
 st.header("What can we tell about the time of UFO sightings?")
 
 top_10_states = df["Time"].value_counts().head(200)
@@ -201,6 +202,7 @@ top_10_states = df["Time"].value_counts().head(200)
 st.title("Times of UFO visits")
 st.line_chart(top_10_states)
 
+st.header("Hypothesis #8:")
 st.header("Where do we have the most images of UFOs")
 
 
