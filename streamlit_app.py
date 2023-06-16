@@ -142,9 +142,8 @@ st.plotly_chart(
          values=top_10_states,
          names=top_10_states.index,
          title="Shapes of UFO's"))
-st.write(
-  "These graphs show the most common shapes of UFO's are light, circle, and triangle."
-)
+
+st.write("These graphs show the most common shapes of UFO's are light, circle, and triangle.")
 
 st.header("Hypothesis #6:")
 st.subheader("Does the country have anything to do with the shape of the UFO?")
