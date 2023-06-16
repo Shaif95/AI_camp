@@ -223,4 +223,6 @@ st.plotly_chart(
 
 st.write("As you can see from the chart, most images are from USA.")
 
+st.write ("conclusion : So, In this data science project on UFO sightings, we analyzed the data to find that the United States had the highest number of reported sightings, most sightings lasted between 0 and 10 seconds, and common shapes reported were light, circle, and triangle. ")
+
 
