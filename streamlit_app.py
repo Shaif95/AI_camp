@@ -207,8 +207,6 @@ st.header("Hypothesis #8:")
 st.header("Where do we have the most images of UFOs")
 
 
-st.write("As you can see from the chart, most images are from USA.")
-
 dff = df[df["Images"] == "Yes"].head(200)
 
 top_5 = dff['Country'].value_counts().head(5)
@@ -219,3 +217,7 @@ st.plotly_chart(
          values=top_5.values,
          names=top_5.index,
          title="Top 5 Countries with UFO Sightings"))
+
+st.write("As you can see from the chart, most images are from USA.")
+
+
