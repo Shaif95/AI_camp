@@ -44,7 +44,8 @@ df["Images"] = df["Images"].apply(lambda x: "No" if x != "Yes" else x)
 
 st.write(df.head(5))
 
-st.header("Hypothesis #1 :Do the number of UFO sightings vary  across different countries?: Leighton")
+st.header("Hypothesis #1 :")
+st.subheader("Do the number of UFO sightings vary  across different countries?: Leighton")
 
 st.subheader(
   "Below is a Bar graph and Pie chart representing how many sightings are reported on UFO's by Countries around the world"
@@ -65,7 +66,9 @@ st.write(
   "The above data shows that the US has far more UFO sightings than either the UK or Canada combined"
 )
 
-st.header("Hypothesis #2 : The frequency of UFO sightings differs significantly among different states and cities within the United States: Leighton")
+st.header("Hypothesis #2:") 
+          
+st.subheader("The frequency of UFO sightings differs significantly among different states and cities within the United States: Leighton")
 
 st.subheader(
   "Now we'll look at how US sightings of UFO's are spread out amoung states and cities"
