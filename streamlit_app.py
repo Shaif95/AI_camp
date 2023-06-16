@@ -202,13 +202,13 @@ top_10_states = df["Time"].value_counts().head(200)
 st.title("Times of UFO visits")
 st.line_chart(top_10_states)
 
-st.header("As you can see from the chart, most of the UFOs are seen at night.")
+st.write("As you can see from the chart, most of the UFOs are seen at night.")
 
 st.header("Hypothesis #8:")
 st.header("Where do we have the most images of UFOs")
 
 
-st.header("As you can see from the chart, most images are from USA.")
+st.write("As you can see from the chart, most images are from USA.")
 
 dff = df[df["Images"] == "Yes"].head(200)
 
